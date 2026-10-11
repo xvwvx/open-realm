@@ -1,0 +1,10 @@
+# Godot 4+
+.godot/
+/android/
+
+# .NET
+.mono/
+data_*/
+bin/
+obj/
+*.user

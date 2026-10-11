@@ -1,0 +1,28 @@
+<Project Sdk="Godot.NET.Sdk/4.7.2">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>MdxPreview</RootNamespace>
+    <AssemblyName>MdxPreview</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>$(NoWarn);CS0649;CS0169</NoWarn>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <!-- The core layer is plain C# (no Godot dependency) so it can also be compiled
+       and exercised by tests/CoreTests. The tests/*/ console probe projects each
+       build the core sources themselves, so they stay out of the plugin assembly;
+       tests/verify is a Godot scene script and belongs to the plugin assembly. -->
+  <ItemGroup>
+    <Compile Remove="tests/**/*.cs" />
+    <Compile Include="tests/verify/**/*.cs" />
+    <Compile Include="tests/export_probe/**/*.cs" Exclude="tests/export_probe/{bin,obj,snapshot,AsmInspect}/**" />
+    <Compile Remove=".godot/**/*.cs" />
+    <Compile Remove="tests\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="tests\**" />
+  </ItemGroup>
+</Project>

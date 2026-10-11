@@ -1,0 +1,49 @@
+MDX 导出信息
+========================================
+模型名称        : CraneGod
+源模型虚拟路径  : D:/rpg/output/files/zq/zuoqi_15_SMINAD.mdx
+MDX 版本        : 800
+动画文件 (MODL) : (无)
+导出时间        : 2026-10-06 13:03:16
+输出目录        : res://Godot
+场景文件        : res://Godot/CraneGod.tscn
+采样帧率        : 30 fps
+
+---- 数量统计 ----
+动画序列        : 5
+几何体 (Geoset) : 3（顶点 1733，三角面 2772）
+材质            : 2（层 5）
+贴图引用        : 5（已导出 PNG 5）
+骨骼 (BONE)     : 25
+辅助节点        : 3
+骨骼总数 (节点) : 38
+粒子发射器      : 4（PRE2 4，PRE1 0）
+飘带发射器      : 0
+事件对象        : 0
+相机            : 1
+光源            : 0
+附着点          : 6
+碰撞体          : 0
+已烘焙动画      : 5
+
+---- 序列清单 ----
+[0] Walk  帧 3..697  时长 0.694 秒  循环
+[1] Stand  帧 4514..6597  时长 2.083 秒  循环
+[2] Death  帧 9134..13647  时长 4.513 秒  不循环
+[3] Attack - 1  帧 15730..16772  时长 1.042 秒  不循环
+[4] Attack - 2  帧 18855..19897  时长 1.042 秒  不循环
+
+---- 导出贴图 ----
+Textures_Flare.png  <=  Textures\Flare.blp  （2060 字节）
+Textures_Shockwave11.png  <=  Textures\Shockwave11.blp  （11343 字节）
+Textures_Dust3x.png  <=  Textures\Dust3x.blp  （7333 字节）
+zq_zuoqi_15_SMINAD.png  <=  zq\zuoqi_15_SMINAD.blp  （47839 字节）
+ReplaceableTextures_TeamColor_TeamColor00.png  <=  ReplaceableTextures\TeamColor\TeamColor00.blp  （92 字节）
+
+---- 已知限制 ----
+1. 粒子发射器（PRE1/PRE2）与飘带（RIBB）未烘焙进场景，仅导出几何、骨骼动画与材质。
+2. UV 动画（TXAN 平移/旋转/缩放）与翻页贴图（KMTF）取导出瞬间的静帧，未做成轨道动画。
+3. 贴图替换使用导出时的队伍颜色/辉光纯色，之后修改队伍颜色不会影响已导出的 PNG。
+4. 广告牌（Billboarded）节点按作者姿态烘焙，不再随摄像机朝向变化。
+5. 事件对象（EVTS）、附着点、碰撞体、光源与相机只统计数量，未生成节点。
+6. 透明度/颜色动画只烘焙了导出瞬间的静帧（写入材质 albedo）。
